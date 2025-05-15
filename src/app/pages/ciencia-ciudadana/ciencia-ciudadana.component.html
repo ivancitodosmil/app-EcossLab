@@ -1,0 +1,48 @@
+<div class="contenedor" style="padding: 2rem; max-width: 900px; margin: auto;">
+  <h2 style="text-align: center; margin-bottom: 2rem;">Gráficas de Ciencia Ciudadana</h2>
+
+  <!-- Gráfica 1: Observaciones por especie -->
+  <div style="margin-bottom: 2rem;">
+    <button (click)="toggleGrafica1()" style="margin-bottom: 1rem;" class="boton">
+      {{ showGrafica1 ? 'Ocultar' : 'Mostrar' }} Gráfica de Observaciones por Especie
+    </button>
+    <div *ngIf="showGrafica1">
+      <h3 style="text-align: center;">Observaciones por Especie</h3>
+      <canvas baseChart
+        [data]="{ labels: especiesLabels, datasets: [{ data: especiesData, label: 'Especies' }] }"
+        [type]="'bar'"
+        [options]="{ responsive: true }">
+      </canvas>
+    </div>
+  </div>
+
+  <!-- Gráfica 2: Top usuarios -->
+  <div style="margin-bottom: 2rem;">
+    <button (click)="toggleGrafica2()" style="margin-bottom: 1rem;" class="boton">
+      {{ showGrafica2 ? 'Ocultar' : 'Mostrar' }} Gráfica de Observaciones por Usuario
+    </button>
+    <div *ngIf="showGrafica2">
+      <h3 style="text-align: center;">Top 10 Usuarios que más han observado</h3>
+      <canvas baseChart
+        [data]="{ labels: usuariosLabels, datasets: [{ data: usuariosData, label: 'Usuarios' }] }"
+        [type]="'pie'"
+        [options]="{ responsive: true }">
+      </canvas>
+    </div>
+  </div>
+
+  <!-- Gráfica 3: Observaciones por mes -->
+  <div style="margin-bottom: 2rem;">
+    <button (click)="toggleGrafica3()" style="margin-bottom: 1rem;" class="boton">
+      {{ showGrafica3 ? 'Ocultar' : 'Mostrar' }} Gráfica de Observaciones por Mes
+    </button>
+    <div *ngIf="showGrafica3">
+      <h3 style="text-align: center;">Observaciones por Mes</h3>
+      <canvas baseChart
+        [data]="{ labels: mesesLabels, datasets: [{ data: mesesData, label: 'Meses' }] }"
+        [type]="'line'"
+        [options]="{ responsive: true }">
+      </canvas>
+    </div>
+  </div>
+</div>

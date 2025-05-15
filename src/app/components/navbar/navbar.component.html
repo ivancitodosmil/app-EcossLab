@@ -1,0 +1,35 @@
+<!-- navbar.component.html -->
+<nav class="bg-[#5F8E00] text-white shadow-[0_4px_10px_rgba(0,0,0,0.08)] border-b border-[#d2e88e] fixed w-full z-50">
+  <div class="w-full flex justify-between items-center px-8 py-4 max-w-none">
+
+    <!-- Texto EcossLab en blanco -->
+    <div class="text-2xl font-bold tracking-tight text-white">
+      EcossLab
+    </div>
+
+    <!-- Menú escritorio -->
+    <div class="space-x-6 hidden md:flex text-sm font-semibold">
+      <a routerLink="/inicio" routerLinkActive="font-bold" class="hover:text-[#d2e88e]">Inicio</a>
+      <a routerLink="/equipo" routerLinkActive="font-bold" class="hover:text-[#d2e88e]">Equipo</a>
+      <a routerLink="/que-hacemos" routerLinkActive="font-bold" class="hover:text-[#d2e88e]">¿Qué hacemos?</a>
+      <a routerLink="/cursos" routerLinkActive="font-bold" class="hover:text-[#d2e88e]">Cursos</a>
+      <a routerLink="/contacto" routerLinkActive="font-bold" class="hover:text-[#d2e88e]">Contacto</a>
+    </div>
+
+    <!-- Botón hamburguesa móvil -->
+    <div class="md:hidden">
+      <button (click)="toggleMenu()" class="focus:outline-none text-3xl text-white">
+        ☰
+      </button>
+    </div>
+  </div>
+
+  <!-- Menú móvil -->
+  <div *ngIf="isMenuOpen" class="md:hidden bg-[#4a7300] px-6 py-4 space-y-4 text-white font-semibold">
+    <a routerLink="/inicio" routerLinkActive="font-bold" class="block hover:text-[#d2e88e]">Inicio</a>
+    <a routerLink="/equipo" routerLinkActive="font-bold" class="block hover:text-[#d2e88e]">Equipo</a>
+    <a routerLink="/que-hacemos" routerLinkActive="font-bold" class="block hover:text-[#d2e88e]">¿Qué hacemos?</a>
+    <a routerLink="/cursos" routerLinkActive="font-bold" class="block hover:text-[#d2e88e]">Cursos</a>
+    <a routerLink="/contacto" routerLinkActive="font-bold" class="block hover:text-[#d2e88e]">Contacto</a>
+  </div>
+</nav>

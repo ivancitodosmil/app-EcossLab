@@ -1,0 +1,84 @@
+<app-navbar></app-navbar>
+
+<!-- Imagen principal debajo del Navbar -->
+<section class="pt-16 mb-2">
+  <img src="assets/inicio.jpg" alt="Fondo EcossLab" class="hidden md:block w-full h-[430px] object-cover">
+</section>
+
+<!-- HERO principal -->
+<section class="mt-[-80px] pt-24 bg-white mb-8">
+  <div class="text-center px-4">
+    <h1 class="text-5xl md:text-8xl font-extrabold mb-8 md:mb-10 text-center tracking-tight">
+      <span class="text-[#866409]">Eco</span><span class="text-[#866409]">Ss</span><span
+        class="text-[#5F8E00]">Lab</span>
+    </h1>
+
+    <p class="mt-4 text-2xl md:text-4xl italic text-[#866409]">"Investigación para un legado de conservación"</p>
+  </div>
+</section>
+
+<!-- DESCRIPCIÓN -->
+<section class="bg-[#f5f3eb] py-10">
+  <div class="container mx-auto text-center px-6">
+    <p class="text-lg md:text-xl font-medium text-[#5F8E00]">
+      EcossLab es un proyecto que investiga el funcionamiento de los ecosistemas tropicales para facilitar la
+      aplicación de medidas apropiadas para su manejo y conservación.
+    </p>
+  </div>
+</section>
+
+<!-- SECCIÓN DE SERVICIOS -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-[#5F8E00] mb-12">
+      Descubre qué hemos estado haciendo
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-12">
+
+      <!-- TARJETA 1 -->
+      <div class="bg-white p-6 rounded-lg shadow-md text-center border border-[#d2e88e]">
+        <img src="assets/herpetologia.jpg" alt="Herpetología"
+          class="h-60 w-full object-cover rounded-lg shadow-lg mb-4">
+        <button
+          class="bg-[#5F8E00] text-white font-semibold py-2 px-5 rounded-lg shadow-md hover:bg-[#4c7200] transition mb-4">
+          Herpetología
+        </button>
+        <p class="text-[#4a4a4a] text-base">
+          Echa un vistazo a algunas de las fotos favoritas de nuestra familia. A nuestros hijos les encanta
+          investigarlo todo.
+        </p>
+      </div>
+
+      <!-- TARJETA 2 -->
+      <div class="bg-white p-6 rounded-lg shadow-md text-center border border-[#d2e88e]">
+        <img src="assets/ciencia_ciudadana.jpg" alt="Ciencia Ciudadana"
+          class="h-60 w-full object-cover rounded-lg shadow-lg mb-4">
+        <button routerLink="/ciencia-ciudadana"
+          class="bg-[#5F8E00] text-white font-semibold py-2 px-5 rounded-lg shadow-md hover:bg-[#4c7200] transition mb-4">
+          Ciencia Ciudadana
+        </button>
+        <p class="text-[#4a4a4a] text-base">
+          ¿Te hemos contado en qué andamos últimamente? Descubre nuestras aventuras favoritas, así como las
+          últimas novedades.
+        </p>
+      </div>
+
+      <!-- TARJETA 3 -->
+      <div class="bg-white p-6 rounded-lg shadow-md text-center border border-[#d2e88e]">
+        <img src="assets/bosque_seco.jpg" alt="Bosque Seco" class="h-60 w-full object-cover rounded-lg shadow-lg mb-4">
+        <button
+          class="bg-[#5F8E00] text-white font-semibold py-2 px-5 rounded-lg shadow-md hover:bg-[#4c7200] transition mb-4">
+          Bosque Seco
+        </button>
+        <p class="text-[#4a4a4a] text-base">
+          En este camino hemos aprendido mucho a base de ensayo y error. Te contamos las cosas útiles que
+          hemos descubierto.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>
