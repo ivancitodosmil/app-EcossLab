@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CienciaCiudadanaComponent } from './ciencia-ciudadana.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('CienciaCiudadanaComponent', () => {
   let component: CienciaCiudadanaComponent;
@@ -8,16 +8,16 @@ describe('CienciaCiudadanaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CienciaCiudadanaComponent]
-    })
-    .compileComponents();
+      declarations: [CienciaCiudadanaComponent],
+      imports: [HttpClientTestingModule]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CienciaCiudadanaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('debería crearse el componente', () => {
     expect(component).toBeTruthy();
   });
 });

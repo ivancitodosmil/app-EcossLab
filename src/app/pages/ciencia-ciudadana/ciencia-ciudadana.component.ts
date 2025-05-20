@@ -1,75 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { NgChartsModule } from 'ng2-charts';
-import { ChartType } from 'chart.js';
+import { CommonModule } from '@angular/common'; // ✅ IMPORTANTE para *ngIf y *ngFor
 import { InaturalistService } from '../../services/inaturalist.service';
 
 @Component({
+  standalone: true, // ✅ obligatorio si no estás usando NgModule
   selector: 'app-ciencia-ciudadana',
-  standalone: true,
-  imports: [CommonModule, NgChartsModule],
   templateUrl: './ciencia-ciudadana.component.html',
-  styleUrls: ['./ciencia-ciudadana.component.css']
+  styleUrls: ['./ciencia-ciudadana.component.css'],
+  imports: [CommonModule] // ✅ AQUI va el CommonModule para *ngIf y *ngFor
 })
 export class CienciaCiudadanaComponent implements OnInit {
   observaciones: any[] = [];
+  cargando: boolean = true;
 
-  showGrafica1 = false;
-  showGrafica2 = false;
-  showGrafica3 = false;
+  constructor(private inatService: InaturalistService) {}
 
-  especiesLabels: string[] = [];
-  especiesData: number[] = [];
-
-  usuariosLabels: string[] = [];
-  usuariosData: number[] = [];
-
-  mesesLabels: string[] = [];
-  mesesData: number[] = [];
-
-  constructor(private api: InaturalistService) {}
-
-  ngOnInit() {
-    this.api.getObservacionesFenotropic().subscribe((res) => {
-      this.observaciones = res.results;
-      console.log('📦 Datos API:', this.observaciones);
-      this.generarDatos();
+  ngOnInit(): void {
+    this.inatService.getAllObservations().subscribe({
+      next: (data) => {
+        this.observaciones = data;
+        this.cargando = false;
+      },
+      error: (err) => {
+        console.error('Error al cargar observaciones', err);
+        this.cargando = false;
+      }
     });
-  }
-
-  generarDatos() {
-    const especieConteo: { [clave: string]: number } = {};
-    const usuarioConteo: { [clave: string]: number } = {};
-    const conteoMeses: { [mes: string]: number } = {};
-
-    for (let obs of this.observaciones) {
-      const especie = obs.taxon?.preferred_common_name || 'Desconocida';
-      const usuario = obs.user?.login || 'Anónimo';
-      const fecha = new Date(obs.observed_on);
-      const mes = fecha.toLocaleString('default', { month: 'long' });
-
-      especieConteo[especie] = (especieConteo[especie] || 0) + 1;
-      usuarioConteo[usuario] = (usuarioConteo[usuario] || 0) + 1;
-      conteoMeses[mes] = (conteoMeses[mes] || 0) + 1;
-    }
-
-    this.especiesLabels = Object.keys(especieConteo);
-    this.especiesData = Object.values(especieConteo);
-
-    this.usuariosLabels = Object.keys(usuarioConteo).slice(0, 10);
-    this.usuariosData = Object.values(usuarioConteo).slice(0, 10);
-
-    this.mesesLabels = Object.keys(conteoMeses);
-    this.mesesData = Object.values(conteoMeses);
-  }
-
-  toggleGrafica1() {
-    this.showGrafica1 = !this.showGrafica1;
-  }
-  toggleGrafica2() {
-    this.showGrafica2 = !this.showGrafica2;
-  }
-  toggleGrafica3() {
-    this.showGrafica3 = !this.showGrafica3;
   }
 }
