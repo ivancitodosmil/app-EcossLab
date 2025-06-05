@@ -9,6 +9,7 @@ export const routes: Routes = [
   { path: 'cursos', loadComponent: () => import('./pages/cursos/cursos.component').then(m => m.CursosComponent) },
   { path: 'contacto', loadComponent: () => import('./pages/contacto/contacto.component').then(m => m.ContactoComponent) },
   { path: 'ciencia-ciudadana', loadComponent: () => import('./pages/ciencia-ciudadana/ciencia-ciudadana.component').then(m => m.CienciaCiudadanaComponent) },
+  { path: 'graficas-importantes', loadComponent: () => import('./pages/graficas-importantes/graficas-importantes.component').then(m => m.GraficasImportantesComponent) },
 ];
 
 

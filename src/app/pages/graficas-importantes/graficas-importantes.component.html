@@ -1,0 +1,78 @@
+<app-navbar></app-navbar>
+
+<div *ngIf="cargando" class="text-center py-6 text-gray-500 text-lg pt-24">
+  Cargando datos para gráficas...
+</div>
+
+<div *ngIf="!cargando" class="p-4 pt-24 max-w-7xl mx-auto">
+  <h1 class="text-3xl font-extrabold mb-6 text-[#866409] text-center">
+    Gráficas Importantes
+  </h1>
+
+  <!-- Botón Regresar -->
+  <div class="mb-8 text-center">
+    <button
+      routerLink="/ciencia-ciudadana"
+      class="bg-[#5F8E00] hover:bg-[#4A6A00] text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-300"
+      title="Regresar a observaciones"
+    >
+      ← Regresar a Observaciones
+    </button>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+    <!-- 1 -->
+    <section class="bg-white rounded-lg shadow-lg p-6 h-full">
+      <h2 class="text-xl font-semibold mb-4 text-[#866409]">1. Observaciones por Usuario</h2>
+      <canvas baseChart
+        [data]="{ labels: usuariosLabels, datasets: [{ data: usuariosData, backgroundColor: [
+          '#9A6324', '#D19C5A', '#F0D9A6', '#A97839', '#C9B18F', '#7C4A00', '#D2B48C', '#B8860B', '#F4A460', '#CD853F'] }] }"
+        [options]="chartOptions"
+        [type]="'bar'"></canvas>
+    </section>
+
+    <!-- 2 -->
+    <section class="bg-white rounded-lg shadow-lg p-6 h-full">
+      <h2 class="text-xl font-semibold mb-4 text-[#866409]">2. Observaciones por Mes</h2>
+      <canvas baseChart
+        [data]="{ labels: mesesLabels, datasets: [{ data: mesesData, backgroundColor: [
+          '#E0C097', '#CFA870', '#D4B66A', '#AA7E39', '#B48E4F', '#E1AD50', '#D6A544', '#C7992C', '#C47F00', '#A26700', '#886515', '#D9B382'] }] }"
+        [options]="chartOptions"
+        [type]="'bar'"></canvas>
+    </section>
+
+    <!-- 3 -->
+    <section class="bg-white rounded-lg shadow-lg p-6 h-full">
+      <h2 class="text-xl font-semibold mb-4 text-[#866409]">3. Observaciones por Estado de Identificación</h2>
+      <canvas baseChart
+        [data]="{ labels: estadoIdLabels, datasets: [{ data: estadoIdData, backgroundColor: ['#A56A00', '#D4A14A'] }] }"
+        [options]="chartOptions"
+        [type]="'doughnut'"></canvas>
+    </section>
+
+    <!-- 4 -->
+    <section class="bg-white rounded-lg shadow-lg p-6 h-full">
+      <h2 class="text-xl font-semibold mb-4 text-[#866409]">4. Observaciones por Calidad de Verificación</h2>
+      <canvas baseChart
+        [data]="{ labels: calidadLabels, datasets: [{ data: calidadData, backgroundColor: ['#C9A84D', '#A97839', '#7A4B00'] }] }"
+        [options]="chartOptions"
+        [type]="'bar'"></canvas>
+    </section>
+  </div>
+</div>
+
+<!-- Botón Visualizar Dashboard -->
+<div class="mt-10 text-center">
+  <a
+    href="https://app.powerbi.com/links/AFZdJRTMCw?ctid=6eeb49aa-436d-43e6-becd-bbdf79e5077d&pbi_source=linkShare&bookmarkGuid=3889c63e-d412-4824-913a-c0ee02027e90"
+    target="_blank"
+    rel="noopener"
+    class="bg-[#866409] hover:bg-[#6d5105] text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 inline-block"
+    title="Ir al Dashboard en Power BI"
+  >
+    📊 Visualizar Dashboard
+  </a>
+</div>
+
+
+<app-footer></app-footer>
