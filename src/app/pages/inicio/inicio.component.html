@@ -1,8 +1,11 @@
 <app-navbar></app-navbar>
 
 <!-- Imagen principal debajo del Navbar -->
-<section class="pt-16 mb-2">
+<section class="pt-16 mb-2 relative">
   <img src="assets/inicio.jpg" alt="Fondo EcossLab" class="hidden md:block w-full h-[430px] object-cover">
+  
+  <!-- Capa negra semitransparente encima -->
+  <div class="hidden md:block absolute inset-0 bg-black opacity-40"></div>
 </section>
 
 <!-- HERO principal -->
