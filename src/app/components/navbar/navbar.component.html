@@ -1,19 +1,23 @@
-<!-- navbar.component.html -->
-<nav class="bg-[#5F8E00] text-white shadow-[0_4px_10px_rgba(0,0,0,0.08)] border-b border-[#d2e88e] fixed w-full z-50">
-  <div class="w-full flex justify-between items-center px-8 py-4 max-w-none">
+<nav class="bg-[#5F8E00] text-white shadow-[0_4px_10px_rgba(0,0,0,0.08)] fixed w-full z-50">
+  <div class="w-full flex items-center justify-between px-14 py-4">
 
-    <!-- Texto EcossLab en blanco -->
-    <div class="text-2xl font-bold tracking-tight text-white">
+    <!-- Logo con mejor contraste -->
+    <div class="text-2xl font-extrabold tracking-tight text-white font-serif">
       EcossLab
     </div>
 
     <!-- Menú escritorio -->
-    <div class="space-x-6 hidden md:flex text-sm font-semibold">
-      <a routerLink="/inicio" routerLinkActive="font-bold" class="hover:text-[#d2e88e]">Inicio</a>
-      <a routerLink="/equipo" routerLinkActive="font-bold" class="hover:text-[#d2e88e]">Equipo</a>
-      <a routerLink="/que-hacemos" routerLinkActive="font-bold" class="hover:text-[#d2e88e]">¿Qué hacemos?</a>
-      <a routerLink="/cursos" routerLinkActive="font-bold" class="hover:text-[#d2e88e]">Cursos</a>
-      <a routerLink="/contacto" routerLinkActive="font-bold" class="hover:text-[#d2e88e]">Contacto</a>
+    <div class="ml-auto space-x-8 hidden md:flex text-base font-semibold">
+      <a routerLink="/inicio" routerLinkActive="border-b-2 border-white pb-1 font-bold"
+        class="hover:text-white transition duration-200">Inicio</a>
+      <a routerLink="/equipo" routerLinkActive="border-b-2 border-white pb-1 font-bold"
+        class="hover:text-white transition duration-200">Equipo</a>
+      <a routerLink="/que-hacemos" routerLinkActive="border-b-2 border-white pb-1 font-bold"
+        class="hover:text-white transition duration-200">¿Qué hacemos?</a>
+      <a routerLink="/cursos" routerLinkActive="border-b-2 border-white pb-1 font-bold"
+        class="hover:text-white transition duration-200">Cursos</a>
+      <a routerLink="/contacto" routerLinkActive="border-b-2 border-white pb-1 font-bold"
+        class="hover:text-white transition duration-200">Contacto</a>
     </div>
 
     <!-- Botón hamburguesa móvil -->
@@ -26,10 +30,15 @@
 
   <!-- Menú móvil -->
   <div *ngIf="isMenuOpen" class="md:hidden bg-[#4a7300] px-6 py-4 space-y-4 text-white font-semibold">
-    <a routerLink="/inicio" routerLinkActive="font-bold" class="block hover:text-[#d2e88e]">Inicio</a>
-    <a routerLink="/equipo" routerLinkActive="font-bold" class="block hover:text-[#d2e88e]">Equipo</a>
-    <a routerLink="/que-hacemos" routerLinkActive="font-bold" class="block hover:text-[#d2e88e]">¿Qué hacemos?</a>
-    <a routerLink="/cursos" routerLinkActive="font-bold" class="block hover:text-[#d2e88e]">Cursos</a>
-    <a routerLink="/contacto" routerLinkActive="font-bold" class="block hover:text-[#d2e88e]">Contacto</a>
+    <a routerLink="/inicio" routerLinkActive="border-b-2 border-white pb-1 font-bold"
+      class="block hover:text-white transition duration-200">Inicio</a>
+    <a routerLink="/equipo" routerLinkActive="border-b-2 border-white pb-1 font-bold"
+      class="block hover:text-white transition duration-200">Equipo</a>
+    <a routerLink="/que-hacemos" routerLinkActive="border-b-2 border-white pb-1 font-bold"
+      class="block hover:text-white transition duration-200">¿Qué hacemos?</a>
+    <a routerLink="/cursos" routerLinkActive="border-b-2 border-white pb-1 font-bold"
+      class="block hover:text-white transition duration-200">Cursos</a>
+    <a routerLink="/contacto" routerLinkActive="border-b-2 border-white pb-1 font-bold"
+      class="block hover:text-white transition duration-200">Contacto</a>
   </div>
 </nav>

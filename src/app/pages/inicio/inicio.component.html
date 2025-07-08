@@ -1,85 +1,119 @@
 <app-navbar></app-navbar>
 
 <!-- Imagen principal debajo del Navbar -->
-<section class="pt-16 mb-2 relative">
+<section class="pt-16 mb-2 relative animate-fade-in-up">
   <img src="assets/inicio.jpg" alt="Fondo EcossLab" class="hidden md:block w-full h-[430px] object-cover">
-  
-  <!-- Capa negra semitransparente encima -->
   <div class="hidden md:block absolute inset-0 bg-black opacity-40"></div>
+
+  <!-- Contenido sobre la imagen -->
+  <div class="hidden md:flex absolute inset-0 items-center justify-start pl-12">
+    <div class="text-white max-w-md">
+      <h2 class="text-3xl md:text-4xl font-bold mb-2">Investigamos los Sistemas Tropicales</h2>
+      <p class="text-lg mb-4">Conoce nuestros proyectos</p>
+      <div class="flex flex-wrap gap-4">
+        <a routerLink="/herpetologia"
+          class="bg-[#5F8E00] hover:bg-[#4a6d00] text-white font-semibold py-2 px-4 rounded transition duration-300 whitespace-nowrap">
+          Herpetología
+        </a>
+        <a routerLink="/ciencia-ciudadana"
+          class="bg-[#5F8E00] hover:bg-[#4a6d00] text-white font-semibold py-2 px-4 rounded transition duration-300 whitespace-nowrap">
+          Ciencia Ciudadana
+        </a>
+        <a routerLink="/bosque-seco"
+          class="bg-[#5F8E00] hover:bg-[#4a6d00] text-white font-semibold py-2 px-4 rounded transition duration-300 whitespace-nowrap">
+          Bosque Seco
+        </a>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-<!-- HERO principal -->
-<section class="mt-[-80px] pt-24 bg-white mb-8">
-  <div class="text-center px-4">
-    <h1 class="text-5xl md:text-8xl font-extrabold mb-8 md:mb-10 text-center tracking-tight">
-      <span class="text-[#866409]">Eco</span><span class="text-[#866409]">Ss</span><span
-        class="text-[#5F8E00]">Lab</span>
-    </h1>
 
-    <p class="mt-4 text-2xl md:text-4xl italic text-[#866409]">"Investigación para un legado de conservación"</p>
+<!-- LOGO como imagen y texto -->
+<section class="bg-white py-6 animate-fade-in-up">
+  <div class="flex flex-col md:flex-row justify-center items-center gap-3 md:gap-6 px-4">
+    <img src="assets/Logo-EcossLab.png" alt="Logo EcossLab" class="w-[80px] md:w-[110px]">
+
+    <div class="flex flex-col justify-center items-center md:items-start text-center md:text-left leading-tight">
+      <h1 class="text-4xl md:text-5xl font-bold mb-1">
+        <span class="font-serif text-[#866409]">∑</span>
+        <span class="text-[#866409]">co</span><span class="text-[#866409]">Ss</span><span
+          class="text-[#5F8E00]">Lab</span>
+      </h1>
+      <div>
+        <p class="text-[#5F8E00] text-base md:text-lg font-bold mb-0">Ecología Tropical y Servicios</p>
+        <p class="text-[#866409] text-base md:text-lg font-bold mt-0">Ecosistémicos</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-4 text-center px-4">
+    <p class="text-xl md:text-2xl italic text-[#866409] animate-fade-in">"Investigación para un legado de Conservación"
+    </p>
   </div>
 </section>
 
 <!-- DESCRIPCIÓN -->
-<section class="bg-[#f5f3eb] py-10">
+<section class="bg-[#f5f3eb] py-6 animate-fade-in-up">
   <div class="container mx-auto text-center px-6">
-    <p class="text-lg md:text-xl font-medium text-[#5F8E00]">
-      EcossLab es un proyecto que investiga el funcionamiento de los ecosistemas tropicales para facilitar la
-      aplicación de medidas apropiadas para su manejo y conservación.
+    <p class="text-base md:text-lg font-medium text-[#5F8E00]">
+      EcossLab es un proyecto que investiga el funcionamiento de los Ecosistemas Tropicales para facilitar la
+      aplicación de medidas apropiadas para su Manejo y Conservación
     </p>
   </div>
 </section>
 
 <!-- SECCIÓN DE SERVICIOS -->
-<section class="py-16 bg-white">
-  <div class="container mx-auto px-6">
-    <h2 class="text-3xl md:text-4xl font-bold text-center text-[#5F8E00] mb-12">
+<section class="py-10 bg-white animate-fade-in-up">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-bold text-center text-[#5F8E00] mb-8 animate-fade-in">
       Descubre qué hemos estado haciendo
     </h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-12">
-
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       <!-- TARJETA 1 -->
-      <div class="bg-white p-6 rounded-lg shadow-md text-center border border-[#d2e88e]">
-        <img src="assets/herpetologia.jpg" alt="Herpetología"
-          class="h-60 w-full object-cover rounded-lg shadow-lg mb-4">
+      <div
+        class="bg-white p-6 rounded-lg border border-[#d2e88e] text-center shadow-md transform transition duration-300 hover:shadow-lg hover:border-[#b3d97f] animate-slide-in-up">
+        <img src="assets/herpetologia.jpg" alt="Herpetología" class="h-60 w-full object-cover rounded-lg shadow mb-4">
         <button
-          class="bg-[#5F8E00] text-white font-semibold py-2 px-5 rounded-lg shadow-md hover:bg-[#4c7200] transition mb-4">
+          class="bg-[#5F8E00] text-white font-semibold py-2 px-5 rounded-lg shadow-md hover:bg-[#4a6d00] transition duration-300">
           Herpetología
         </button>
-        <p class="text-[#4a4a4a] text-base">
-          Echa un vistazo a algunas de las fotos favoritas de nuestra familia. A nuestros hijos les encanta
-          investigarlo todo.
+        <p class="text-[#4a4a4a] text-sm mt-2">
+          Echa un vistazo a algunas de las fotos favoritas de nuestra familia. A nuestros hijos les encanta investigarlo
+          todo.
         </p>
       </div>
 
       <!-- TARJETA 2 -->
-      <div class="bg-white p-6 rounded-lg shadow-md text-center border border-[#d2e88e]">
+      <div
+        class="bg-white p-6 rounded-lg border border-[#d2e88e] text-center shadow-md transform transition duration-300 hover:shadow-lg hover:border-[#b3d97f] animate-slide-in-up delay-100">
         <img src="assets/ciencia_ciudadana.jpg" alt="Ciencia Ciudadana"
-          class="h-60 w-full object-cover rounded-lg shadow-lg mb-4">
+          class="h-60 w-full object-cover rounded-lg shadow mb-4">
         <button routerLink="/ciencia-ciudadana"
-          class="bg-[#5F8E00] text-white font-semibold py-2 px-5 rounded-lg shadow-md hover:bg-[#4c7200] transition mb-4">
+          class="bg-[#5F8E00] text-white font-semibold py-2 px-5 rounded-lg shadow-md hover:bg-[#4a6d00] transition duration-300">
           Ciencia Ciudadana
         </button>
-        <p class="text-[#4a4a4a] text-base">
-          ¿Te hemos contado en qué andamos últimamente? Descubre nuestras aventuras favoritas, así como las
-          últimas novedades.
+        <p class="text-[#4a4a4a] text-sm mt-2">
+          ¿Te hemos contado en qué andamos últimamente? Descubre nuestras aventuras favoritas, así como las últimas
+          novedades.
         </p>
       </div>
 
       <!-- TARJETA 3 -->
-      <div class="bg-white p-6 rounded-lg shadow-md text-center border border-[#d2e88e]">
-        <img src="assets/bosque_seco.jpg" alt="Bosque Seco" class="h-60 w-full object-cover rounded-lg shadow-lg mb-4">
+      <div
+        class="bg-white p-6 rounded-lg border border-[#d2e88e] text-center shadow-md transform transition duration-300 hover:shadow-lg hover:border-[#b3d97f] animate-slide-in-up delay-200">
+        <img src="assets/bosque_seco.jpg" alt="Bosque Seco" class="h-60 w-full object-cover rounded-lg shadow mb-4">
         <button
-          class="bg-[#5F8E00] text-white font-semibold py-2 px-5 rounded-lg shadow-md hover:bg-[#4c7200] transition mb-4">
+          class="bg-[#5F8E00] text-white font-semibold py-2 px-5 rounded-lg shadow-md hover:bg-[#4a6d00] transition duration-300">
           Bosque Seco
         </button>
-        <p class="text-[#4a4a4a] text-base">
-          En este camino hemos aprendido mucho a base de ensayo y error. Te contamos las cosas útiles que
-          hemos descubierto.
+        <p class="text-[#4a4a4a] text-sm mt-2">
+          En este camino hemos aprendido mucho a base de ensayo y error. Te contamos las cosas útiles que hemos
+          descubierto.
         </p>
       </div>
-
     </div>
   </div>
 </section>
